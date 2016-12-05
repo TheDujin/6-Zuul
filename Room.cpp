@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include <map>
+#include <vector>
 
 using namespace std;
 const int NORTH = 1;
@@ -28,4 +29,19 @@ Room* Room::getExit(int exit) {
 
 void Room::setExit(int direction, Room* nextRoom) {
   exitMap[direction] = nextRoom;
+}
+
+void Room::addItem(Item* newItem) {
+  itemList.push_back(newItem);
+}
+
+Item* Room:removeItem(char* itemName) {
+  for (int i = 0; i < itemList.size(); i++)
+    if (itemList[i]->name.strcasecmp(itemName)) {
+      Item* returnedItem = itemList[i];
+      itemList.erase(itemList.begin() + i);
+      return returnedItem;
+    }
+  cout << "You can't pick up something that doesn't exist." << endl;
+  return NULL;
 }

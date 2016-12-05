@@ -14,7 +14,7 @@ const int DOWN = -3;
 
 struct Item {
   char* name;
-}
+};
 
 int main() {
   vector<Room*> roomList;
