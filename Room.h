@@ -5,6 +5,10 @@
 
 using namespace std;
 
+struct Item {
+  char* name;
+};
+
 class Room {
  public:
   Room(char* newName);

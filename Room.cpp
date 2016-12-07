@@ -35,9 +35,9 @@ void Room::addItem(Item* newItem) {
   itemList.push_back(newItem);
 }
 
-Item* Room:removeItem(char* itemName) {
+Item* Room::removeItem(char* itemName) {
   for (int i = 0; i < itemList.size(); i++)
-    if (itemList[i]->name.strcasecmp(itemName)) {
+    if (strcasecmp(itemName, itemList[i]->name)) {
       Item* returnedItem = itemList[i];
       itemList.erase(itemList.begin() + i);
       return returnedItem;
