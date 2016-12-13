@@ -31,6 +31,7 @@ int main() {
   Room* key = new Room("in an extension of the storage room.");
   Room* exitKey = new Room("in a metal-plated bunker of sorts. How odd.");
   Room* exit = new Room("");
+  Room* currentRoom = starting;
 
   roomList.push_back(starting);
   roomList.push_back(dough);
@@ -48,11 +49,93 @@ int main() {
   roomList.push_back(exitKey);
   roomList.push_back(exit);
 
+  starting->setExit(1, dough);
+  starting->setExit(2, bagel);
+  starting->setExit(-1, corridor2);
+  starting->setExit(-2, corridor1);
+
+  dough->setExit(-1, starting);
+
+  bagel->setExit(-2, starting);
+
+  corridor2->setExit(1, starting);
+  corridor2->setExit(-1, storageDoor);
+
+  corridor1->setExit(2, starting);
+  corridor1->setExit(-1, milk);
+  corridor1->setExit(-2, bucket);
+
+  milk->setExit(1, corridor1);
+
+  bucket->setExit(2, corridor1);
+
+  storageDoor->setExit(1, corridor2);
+  storageDoor->setExit(2, acid);
+
+  acid->setExit(-2, storageDoor);
+
+  storage->setExit(1, storageDoor);
+  storage->setExit(2, key);
+
+  key->setExit(-2, storage);
+
+  secret->setExit(2, storage);
+
+  secretSecret->setExit(3, secret);
+
+  exitKey->setExit(2, secretSecret);
+
   cout << "Welcome to Adventure which is a C++ version of my Zuul game from Java last year!" << endl;
   bool isRunning = true;
-  while (isRunning) {
-    cout << "Please enter GET, GO, " << endl;
 
+  const char get[] = "GET";
+  const char drop[] = "DROP";
+  const char use[] = "USE";
+  const char go[] = "GO";
+  const char help[] = "HELP";
+  const char inventory[] = "INVENTORY";
+  const char quit[] = "QUIT";
+  char input[81];
+  while (isRunning) {
+    cout << "Please enter GET, DROP, USE, GO, HELP, INVENTORY, and QUIT" << endl;
+    cin >> input;
+    cin.ignore();
+    if (strcasecmp(input, get) == 0) {
+      
+      //mediaList.push_back(addMedia());
+      cout << "Getting..." << endl;
+    }
+    else if (strcasecmp(input, drop) == 0) {
+      /*if (mediaList.size() < 1)
+	cout << "There isn't anything to delete. Maybe you should \"ADD\" something first?" << endl;
+	else
+	deleteMedia(listPtr);*/
+      cout << "Dropping..." << endl;
+    }
+    else if (strcasecmp(input, use) == 0) {
+      /*if (mediaList.size() < 1)
+	cout << "There isn't anything to search for. Maybe you should \"ADD\" something first?" << endl;
+      else
+      searchMedia(listPtr);*/
+    }
+    else if (strcasecmp(input, go) == 0) {
+      /*cout << "Quitting..." << endl;
+	cout << "Program terminated. Thanks for your time." << endl;
+	isRunning = false;*/
+    }
+    else if (strcasecmp(input, help) == 0) {
+      
+    }
+    else if (strcasecmp(input, inventory) == 0) {
+      
+    }
+    else if (strcasecmp(input, quit) == 0) {
+
+    }
+
+    else {
+      cout << "That command does not seem to be valid. Please check your spelling." << endl;
+    }
   }
   
   return 0;
