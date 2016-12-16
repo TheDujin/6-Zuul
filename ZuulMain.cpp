@@ -375,3 +375,66 @@ int main() {
   
   return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * How to complete Facility:
+ * 1. go north - Go into the kitchen
+ * 2. get wad_of_dough - Get the wad of dough
+ * 3. go south - Go back to the commons
+ * 4. go east - Go to the room with the bagel machine
+ * 5. use wad_of_dough - Put the wad of dough into the machine. Lose: wad_of_dough; Get: bagel
+ * 6. go west - Go back to the commons
+ * 7. go west - Go to the first corridor
+ * 8. go south - Go to the milk room
+ * 9. get milk_carton - Get the carton of milk
+ * 10. use milk_carton - Shake the milk carton. Lose: milk_carton; Get: glob_of_cream_cheese
+ * 11. use bagel OR use glob_of_cream_cheese - Spread the cream cheese on the bagel. Lose: bagel, glob_of_cream_cheese; Get: cream_cheese_bagel
+ * 12. go north - Go to the first corridor
+ * 13. go west - Go to the forge
+ * 14. get bucket - Get the bucket
+ * 15. go east - Go back to the first corridor
+ * 16. go east - Go back to the commons
+ * 17. go south - Go to the second corridor
+ * 18. go south - Go to the storage door
+ * 19. go east - Go to the lab
+ * 20. use bucket - Get a bucket of acid. Lose: bucket; Get: bucket_of_acid
+ * 21. go west - Go back to the storage door
+ * 22. use cream_cheese_bagel - Use the cheesy bagel as a key to the storage room. Lose: cream_cheese_bagel; Unlock: south to storage
+ * 23. get yardstick - Get the yardstick
+ * 24. use yardstick - Use the yardstick to hit a secret button. Lose: yardstick; Unlock: west to secret
+ * 25. go east - Go to the storage extension
+ * 26. get key - Get the key. NOTE: This key does not work on the exit
+ * 27. go west - Go back to the storage room
+ * 28. go west - Go to the secret room
+ * 29. use bucket_of_acid - Drop the bucket onto the ground, dissolving it. Lose: bucket_of_acid; Unlock: down to secretSecret
+ * 30. go down - Go to the secret-secret room
+ * 31. use key - Unlock the bunker door. Lose: key; Unlock: west to exitKey
+ * 32. go west - Go into the bunker
+ * 33. get another_key - Get the other key
+ * 34. go east - Go back to the secret-secret room
+ * 35. go up - Go back to the secret room
+ * 36. go east - Go back to the storage room
+ * 37. use another_key - Unlock the exit
+ * 38. go south - Escape through the exit. WIN!
+ */
